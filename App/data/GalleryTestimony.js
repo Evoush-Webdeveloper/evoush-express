@@ -50,8 +50,8 @@ export const sixths = [
 ]
 
 export const sevenths = [
-	{id:1, img: '/images/gallery/peeling/skincare_new_testi_vid1.mp4', format: 'video'},
-	{id:2, img: '/images/gallery/peeling/skincare_new_testi_vid2.mp4', format: 'video'}
+	{id:1, img: '/images/gallery/skincare/skincare_new_testi_vid1.mp4', format: 'video'},
+	{id:2, img: '/images/gallery/skincare/skincare_new_testi_vid2.mp4', format: 'video'}
 
 ]
 
