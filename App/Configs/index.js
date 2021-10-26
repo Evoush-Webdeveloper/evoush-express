@@ -1,7 +1,5 @@
 import fetch from 'node-fetch'
 import axios from 'axios'
-import {firsts} from '../data/GalleryTestimony.js'
-
 
 export const GetChannel = async(channel_id) => {
 	console.log(channel_id)

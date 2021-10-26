@@ -1,5 +1,5 @@
 import {GetChannel, LatestVideo, PlaylistVideo, SearchVideo, GetAllProduct, DetailProduct, CheckWeatherByCity} from '../Configs/index.js'
-import {firsts, seconds, thirds, fourths} from '../data/GalleryTestimony.js'
+import {firsts, seconds, thirds, fourths, fifths, sixths, sevenths, eights} from '../data/GalleryTestimony.js'
 import {materials, boxes} from '../data/HeroData.js'
 import {coordinates} from '../data/Coordinate.js'
 
@@ -18,8 +18,8 @@ export const HomePageWebsite = (req, res) => {
 			image: "https://raw.githubusercontent.com/codesyariah122/bahan-evoush/main/images/banner/stories/1.jpg",
 		},
 		heros: [
-			{name: 'light', url: '/images/products/klev/klevv.png'},
-			{name: 'dark', url: '/images/products/klev/klevv.png'}
+		{name: 'light', url: '/images/products/klev/klevv.png'},
+		{name: 'dark', url: '/images/products/klev/klevv.png'}
 		],
 		base_url: process.env.BASE_URL
 	}
@@ -28,17 +28,17 @@ export const HomePageWebsite = (req, res) => {
 
 export const YoutubeChannel = async(req, res) => {
 	let channel_id = req.params.channel_id
-    try {
-    	res.json({
-    		message: 'Youtube profile channel',
-    		data: await GetChannel(channel_id)
-    	})
-    }catch(err){
-    	res.json({
+	try {
+		res.json({
+			message: 'Youtube profile channel',
+			data: await GetChannel(channel_id)
+		})
+	}catch(err){
+		res.json({
 			message: 'Error fetch',
 			data: err.message
 		})
-    }
+	}
 }
 
 
@@ -106,6 +106,14 @@ export const DataGalleryTestimony = async(req, res) => {
 		await GetData(res, "Third data gallery testimony", thirds, 'Error fetch gallery testimony data')
 	}else if(params === "fourth"){
 		await GetData(res, "Fourth data gallery testimony", fourths, 'Error fetch gallery testimony data')
+	}else if(params === "fifth"){
+		await GetData(res, "Fifth data gallery testimony", fifths, 'Error fetch gallery testimony data')
+	}else if(params === "sixth"){
+		await GetData(res, "Sixt data gallery testimony", sixths, 'Error fetch gallery testimony data')
+	}else if(params === "seventh"){
+		await GetData(res, "Sevents data gallery testimony", sevenths, 'Error fetch gallery testimony data')
+	}else if(params === "eight"){
+		await GetData(res, "Eight data gallery testimony", eights, 'Error fetch gallery testimony data')
 	}else {
 		res.json({message: 'No parameter in your request'})
 	}
@@ -116,15 +124,15 @@ export const HeroDataImage = async(req, res) => {
 
 	switch(type){
 		case "materials":
-			await GetData(res, "Fetch data material hero", materials, 'Error fetch data hero image')
+		await GetData(res, "Fetch data material hero", materials, 'Error fetch data hero image')
 		break;
 
 		case "boxes":
-			await GetData(res, "Fetch data boxes hero", boxes, "error fetch data hero image")
+		await GetData(res, "Fetch data boxes hero", boxes, "error fetch data hero image")
 		break;
 
 		default:
-			res.json({message: 'No data type'})
+		res.json({message: 'No data type'})
 	}
 }
 
@@ -192,7 +200,7 @@ export const CheckWeather = async(req, res) => {
 	const keySource = "EVOUSH.COM"
 
 	console.log(`${apiKey}, ${city}, ${keyValidation}
-	`)
+		`)
 
 	try{
 		if(keyValidation === keySource){
